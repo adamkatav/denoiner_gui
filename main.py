@@ -1,7 +1,10 @@
 from asyncore import read
+
+from torch import sign
 from PyQt5 import QtWidgets, uic
 import sys
 import subprocess
+import signal
 
 class Ui(QtWidgets.QMainWindow):
 
@@ -23,11 +26,11 @@ class Ui(QtWidgets.QMainWindow):
             in_type = 'file_reader'
             in_args = f'"path":"{self.text_in_path.toPlainText()}", "blocksize":4096, "sample_size":4'
         reader = f'"type":"{in_type}", "args":{in_args}'
-        pipeline = '[{"type":"DCCRN_processor", "args":{"sample_size":4, "should_overlap":True, "ratio_power":1, "model_path":"./real_time_speech_denoiser/models/DCCRN_sr_16k_batch_16_correct_BN_stft_lookahead.pth"}},]'
+        pipeline = '[{"type":"DCCRN_processor", "args":{"sample_size":4, "should_overlap":True, "ratio_power":1, "model_path":"./models/DCCRN_sr_16k_batch_16_correct_BN_stft_lookahead.pth"}},]'
         # Getting ouput info
         if(self.radio_out_file.isChecked()):
             path = self.text_out_path.toPlainText()
-            writers = f'[{{"type":"file_writer", "args":{{"path":"{path}.wav", "blocking_time":0.0001}}}},]'
+            writers = f'[{{"type":"file_writer", "args":{{"path":"{path}", "blocking_time":0.0001}}}},]'
         elif(self.radio_out_net.isChecked()):
             ip = self.text_out_ip.toPlainText()
             port = self.text_out_port.toPlainText()
@@ -41,7 +44,7 @@ class Ui(QtWidgets.QMainWindow):
     def stop_click(self): #Stop button callback
         print('stop clicked!!')
         try:
-            self.start_script.kill()
+            self.start_script.send_signal(signal.SIGINT)
         except:
             pass
         return
