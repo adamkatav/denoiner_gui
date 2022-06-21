@@ -1,5 +1,5 @@
 # denoiner_gui
-You need to place "adam_gui_wtf" in the same directory as "real_time_speech_denoiser"
+You need to place "denoiner_gui" in the same directory as "real_time_speech_denoiser"
 
 Please use this repo requirements.txt in virtual env.
 ````
@@ -17,9 +17,9 @@ source env/bin/activate
 ````
 Install pip packages
 ````
-pip install -r ./requirements.txt
+pip install -r ./denoiner_gui/requirements.txt
 ````
 from the parent directory run:
 ````
-python ./adam_gui_wtf/main.py
+python ./denoiner_gui/main.py
 ````
