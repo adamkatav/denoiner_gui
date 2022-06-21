@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>Logo-Test.png</file>
+    <file>slps-01.png</file>
+  </qresource>
+</RCC>

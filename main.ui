@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>380</width>
-    <height>264</height>
+    <width>384</width>
+    <height>266</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Denoiser</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color: rgb(92, 53, 102);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="input">
@@ -172,6 +175,8 @@
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="test.qrc"/>
+ </resources>
  <connections/>
 </ui>
