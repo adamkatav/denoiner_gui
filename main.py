@@ -11,7 +11,7 @@ class Ui(QtWidgets.QMainWindow):
 
     def __init__(self):
         super(Ui, self).__init__()
-        uic.loadUi('./adam_gui_wtf/main.ui', self)
+        uic.loadUi('./denoiner_gui/main.ui', self)
         self.btn_start.clicked.connect(self.start_click)
         self.btn_stop.clicked.connect(self.stop_click)
         self.show()
@@ -39,7 +39,7 @@ class Ui(QtWidgets.QMainWindow):
         config_text = f'{{\n    "reader": {{{reader}}},\n    "pipeline": {pipeline},\n    "writers": {writers},\n}}'
         with open('settings.yaml', 'w') as f:
             f.write(config_text)
-        self.start_script = subprocess.Popen('./adam_gui_wtf/start.sh')
+        self.start_script = subprocess.Popen('./denoiner_gui/start.sh')
         return
     
     def stop_click(self): #Stop button callback
