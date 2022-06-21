@@ -5,6 +5,7 @@ from PyQt5 import QtWidgets, uic
 import sys
 import subprocess
 import signal
+import os
 
 class Ui(QtWidgets.QMainWindow):
 
@@ -44,7 +45,7 @@ class Ui(QtWidgets.QMainWindow):
     def stop_click(self): #Stop button callback
         print('stop clicked!!')
         try:
-            self.start_script.send_signal(signal.SIGINT)
+            os.system("pkill -2 python")
         except:
             pass
         return
