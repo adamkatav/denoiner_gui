@@ -8,16 +8,13 @@ mkdir denoiser && cd denoiser
 ````
 git clone https://github.com/WajdBoulos/real_time_speech_denoiser.git && git clone https://github.com/adamkatav/denoiner_gui.git
 ````
-Create and activate pip virtual environment
+Extract pip virtual enrivonment
 ````
-python -m venv env
+tar -xzvf env.tar.gz
 ````
+Activate env
 ````
-source env/bin/activate
-````
-Install pip packages
-````
-pip install -r ./denoiner_gui/requirements.txt
+source ./env/bin/activate
 ````
 from the parent directory run:
 ````
