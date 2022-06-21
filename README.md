@@ -1,5 +1,5 @@
 # denoiner_gui
-You need to place "denoiner_gui" in the same directory as "real_time_speech_denoiser"
+## Instuctions
 ````
 mkdir denoiser && cd denoiser
 ````
