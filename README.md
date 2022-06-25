@@ -19,11 +19,7 @@ from the parent directory run:
 python ./denoiner_gui/main.py
 ````
 ### notes:
-In order to run without terminal you may have to make main.py executable like so:
-````bash
-chmod +x ./denoiner_gui/main.py
-````
-Also, you may have to use the "fix_requirements_linux" branch in "real_time_speech_denioser" repo
+You may have to use the "fix_requirements_linux" branch in "real_time_speech_denioser" repo
 ````bash
 cd real_time_speech_denoiser && git checkout fix_requirements_linux && cd ..
 ````
