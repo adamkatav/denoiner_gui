@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from asyncore import read
 
 from torch import sign
